@@ -25,6 +25,8 @@ Buon divertimento e confermate lettura come al solito!
 
 */
 
+const containerEl = document.querySelector('.row')
+
 const team = [
 
     {
@@ -67,4 +69,34 @@ const team = [
 
 console.log(team);
 
+for (let i = 0; i < team.length; i++) {
+    
+    const teamEl = team[i]
+    
+    const markup =`
 
+    <div class="col-4">
+        <div class="card-img">
+            <img class="img-fluid" src="${teamEl.img}" >
+        </div>
+        
+        <div class="card-body">
+        
+            <h2>${teamEl.nome}</h2>
+            <h4>${teamEl.job}</h4>
+        
+        </div>
+    </div>
+        
+    `
+    containerEl.insertAdjacentHTML('beforeend', markup);
+   
+   
+    for (const key in team[i]) {
+        const value = team[i][key];
+        console.log(value); 
+        
+        
+    }
+    
+}
