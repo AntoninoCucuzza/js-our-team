@@ -76,16 +76,19 @@ for (let i = 0; i < team.length; i++) {
     const markup =`
 
     <div class="col-4">
-        <div class="card-img">
-            <img class="img-fluid" src="${teamEl.img}" >
+        <div class="card">
+            <div class="card-img">
+                <img class="img-fluid" src="${teamEl.img}" >
+            </div>
+            
+            <div class="card-body">
+            
+                <h2>${teamEl.nome}</h2>
+                <h4>${teamEl.job}</h4>
+            
+            </div>
         </div>
-        
-        <div class="card-body">
-        
-            <h2>${teamEl.nome}</h2>
-            <h4>${teamEl.job}</h4>
-        
-        </div>
+
     </div>
         
     `
