@@ -23,6 +23,10 @@ Ragioniamo come sempre a step. Prima la logica in italiano e poi traduciamo in c
 E ricordiamoci che console.log() è nostro amico!
 Buon divertimento e confermate lettura come al solito!
 
+Ecco a voi il tanto desiderato BONUS AGGIUNTIVO:
+Aggiungete un form in pagina per permettere all’utente di aggiungere nuovi membri del team: cliccando sul pulsante “add” viene creato un nuovo oggetto, il quale viene inserito nell’array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall’utente.
+Per l’immagine potete inserire una immagine da un sito a caso oppure un link online per la generazione di un’immagine casuale. Questo sito può esservi utile: https://picsum.photos/
+
 */
 
 const containerEl = document.querySelector('.row')
@@ -109,30 +113,76 @@ for (let i = 0; i < team.length; i++) {
 
 function markup(img, nome, job) {
     
-   const colEl = document.createElement('div')
-   colEl.classList.add('col-4')
-   containerEl.append(colEl)
+    const colEl = document.createElement('div')
+    colEl.classList.add('col-4')
+    containerEl.append(colEl)
    
-   const cardEl = document.createElement('div')
-   cardEl.classList.add('card')
-   colEl.append(cardEl)
+    const cardEl = document.createElement('div')
+    cardEl.classList.add('card')
+    colEl.append(cardEl)
    
-   const cardImgEl = document.createElement('div')
-   cardImgEl.classList.add('card-img')
-   cardEl.append(cardImgEl)
+    const cardImgEl = document.createElement('div')
+    cardImgEl.classList.add('card-img')
+    cardEl.append(cardImgEl)
    
-   const imgEl = document.createElement('img')
-   imgEl.classList.add('img-fluid')
-   imgEl.src = `${img}`
-   cardImgEl.append(imgEl)
+    const imgEl = document.createElement('img')
+    imgEl.classList.add('img-fluid')
+    imgEl.src = `${img}`
+    cardImgEl.append(imgEl)
    
-   const cardBodyEl = document.createElement('div')
-   cardBodyEl.classList.add('card-body')
-   cardEl.append(cardBodyEl)
+    const cardBodyEl = document.createElement('div')
+    cardBodyEl.classList.add('card-body')
+    cardEl.append(cardBodyEl)
    
-   const nameEl = document.createElement('h2')
-   cardBodyEl.append(`${nome}`, nameEl)
-   
-   const jobEl = document.createElement('h4')
-   cardBodyEl.append(`${job}`, jobEl)
+    const nameEl = document.createElement('h2')
+    nameEl.insertAdjacentHTML('beforeend', `${nome}`);
+    cardBodyEl.append(nameEl)
+    
+    const jobEl = document.createElement('h4')
+    jobEl.insertAdjacentHTML('beforeend', `${job}`);
+    cardBodyEl.append(jobEl)
+
 }
+
+document.getElementById('newTeam').addEventListener('submit', function(e) {
+    e.preventDefault()
+
+    const randomImg = './assets/img/chopper.jpg'
+
+    const newNameTeam = document.getElementById('newName').value
+    console.log(newNameTeam);
+
+    const newJobTeam = document.getElementById('newJob').value
+    console.log(newJobTeam);
+
+    // versione easy 
+    markup(randomImg, newNameTeam, newJobTeam)
+
+
+
+
+
+    //versione lunga 
+   /*  const markupSecond =
+    `
+    <div class="col-4">
+    <div class="card">
+        <div class="card-img">
+            <img class="img-fluid" src="${randomImg}" >
+        </div>
+        
+        <div class="card-body">
+        
+            <h2>${newNameTeam}</h2>
+            <h4>${newJobTeam}</h4>
+        
+        </div>
+    </div>
+
+</div>  
+    
+    `
+    containerEl.insertAdjacentHTML('beforeend', markupSecond);
+ */
+    
+})
