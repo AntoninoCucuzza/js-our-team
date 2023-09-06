@@ -73,8 +73,7 @@ for (let i = 0; i < team.length; i++) {
     
     const teamEl = team[i]
     
-    const markup =`
-
+   /*  const markup =`
     <div class="col-4">
         <div class="card">
             <div class="card-img">
@@ -89,17 +88,51 @@ for (let i = 0; i < team.length; i++) {
             </div>
         </div>
 
-    </div>
-        
+    </div>  
     `
     containerEl.insertAdjacentHTML('beforeend', markup);
-   
-   
+    */
+
+
+    const immagine = `${teamEl.img}`
+    const nomi =  `${teamEl.nome}`
+    const lavoro =  `${teamEl.job}`
+
+
+    markup(immagine, nomi, lavoro)
+
     for (const key in team[i]) {
         const value = team[i][key];
-        console.log(value); 
-        
-        
-    }
+        console.log(value);    
+    }   
+}
+
+function markup(img, nome, job) {
     
+   const colEl = document.createElement('div')
+   colEl.classList.add('col-4')
+   containerEl.append(colEl)
+   
+   const cardEl = document.createElement('div')
+   cardEl.classList.add('card')
+   colEl.append(cardEl)
+   
+   const cardImgEl = document.createElement('div')
+   cardImgEl.classList.add('card-img')
+   cardEl.append(cardImgEl)
+   
+   const imgEl = document.createElement('img')
+   imgEl.classList.add('img-fluid')
+   imgEl.src = `${img}`
+   cardImgEl.append(imgEl)
+   
+   const cardBodyEl = document.createElement('div')
+   cardBodyEl.classList.add('card-body')
+   cardEl.append(cardBodyEl)
+   
+   const nameEl = document.createElement('h2')
+   cardBodyEl.append(`${nome}`, nameEl)
+   
+   const jobEl = document.createElement('h4')
+   cardBodyEl.append(`${job}`, jobEl)
 }
