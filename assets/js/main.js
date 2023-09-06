@@ -1,3 +1,4 @@
+console.log('we');
 /* 
 
 Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team. Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
@@ -22,32 +23,48 @@ Ragioniamo come sempre a step. Prima la logica in italiano e poi traduciamo in c
 E ricordiamoci che console.log() è nostro amico!
 Buon divertimento e confermate lettura come al solito!
 
-Dati:
-Wayne Barnett
-Founder & CEO	
-wayne-barnett-founder-ceo.jpg
-
-Angela Caroll	
-Chief Editor	
-angela-caroll-chief-editor.jpg
-
-Walter Gordon
-Office Manager
-walter-gordon-office-manager.jpg
-
-Angela Lopez
-Social Media Manager	
-angela-lopez-social-media-manager.jpg
-
-Scott Estrada	
-Developer	
-scott-estrada-developer.jpg
-
-Barbara Ramos	
-Graphic Designer	
-barbara-ramos-graphic-designer.jpg
-
 */
 
+const team = [
+
+    {
+        nome: "Wayne Barnett",
+        job: "Founder & CEO",
+        img: "./assets/img/wayne-barnett-founder-ceo.jpg",
+    },
+
+    {
+        nome: "Angela Caroll",
+        job: "Chief Editor",
+        img: "./assets/img/angela-caroll-chief-editor.jpg",
+    },
+
+    {
+        nome: "Walter Gordon",
+        job: "Office Manager",
+        img: "./assets/img/walter-gordon-office-manager.jpg",
+    },
+
+    {
+        nome: "Angela Lopez",
+        job: "Social Media Manager",
+        img: "./assets/img/angela-lopez-social-media-manager.jpg",
+    },
+
+    {
+        nome: "Scott Estrada",
+        job: "Developer",
+        img: "./assets/img/scott-estrada-developer.jpg",
+    },
+
+    {
+        nome: "Barbara Ramos",
+        job: "Graphic Designer",
+        img: "./assets/img/barbara-ramos-graphic-designer.jpg",
+    },
+
+]
+
+console.log(team);
 
 
